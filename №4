@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <locale.h>
+ 
+int main(void)
+{
+    printf("Дан массив A размера N.\n");
+    printf("Вывести его элементы в следующем порядке: A_1, A_N , A_2, A_N−1, A_3, A_N−2...\n");
+    int a[10];
+    int n, i;
+    printf("Введите N: ");
+    scanf("%i",&n);
+    printf("Следует заполнить массив А:\n");
+    for (i=0; i<n; ++i)
+    {
+        printf("Введите a[%i] : ",i);
+        scanf("%i",&a[i]);
+    }
+    
+    for (i=0; i<n/2; ++i)
+    {
+        printf("%i\n",a[i]);
+        printf("%i\n",a[n-i-1]);
+    }
+    if (n%2 != 0 ) printf("%i\n",a[(n/2)]);
+}
