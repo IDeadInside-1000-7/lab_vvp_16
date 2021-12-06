@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    printf("Дано целое число N (> 1), а также первый член A и знаменатель D геометрической прогрессии.\n");
+    printf("программа должна сформировать и вывести массив размера N, содержащий N первых членов данной прогрессии: A, A·D, A·D**2 , A·D**3\n");
+    int N, A, D, i;
+    printf("Введите N: ");
+    scanf("%i", &N);
+    printf("\nВведите A: ");
+    scanf("%i", &A);
+    printf("\nВведите D: ");
+    scanf("%i", &D);
+    printf("\n");
+    int result[N];
+    int k = 0;
+    for(i = 0; i < N; i++)
+    {
+        result[i] = A * pow(D, i);
+        printf("%i : %i\n", k, result[i]);
+        k++;
+    }
+}
